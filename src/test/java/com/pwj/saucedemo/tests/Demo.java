@@ -1,5 +1,8 @@
 package com.pwj.saucedemo.tests;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import com.microsoft.playwright.*;
 
 public class Demo {
@@ -7,11 +10,18 @@ public class Demo {
 	public static void main(String[] args) {
 		// Step 1: Create Playwright and Browser instance
 		try (Playwright playwright = Playwright.create()) {
+
+			final Logger logger = LogManager.getLogger(Demo.class);
+
 			Browser browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false));
 			BrowserContext context = browser.newContext();
 			Page page = context.newPage();
+			
+			System.setProperty("log4j.configurationFile", "com/pwj/saucedemo/utilities/log4j2.xml");
 
-			// Step 2: Navigate to Saucedemo Website. 
+	        logger.info("...Starting the test...");
+
+			// Step 2: Navigate to Saucedemo Website.
 			page.navigate("https://www.saucedemo.com/");
 
 			String title = page.title();
