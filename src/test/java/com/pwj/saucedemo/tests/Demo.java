@@ -11,18 +11,21 @@ public class Demo {
 		// Step 1: Create Playwright and Browser instance
 		try (Playwright playwright = Playwright.create()) {
 
+			System.setProperty("log4j.configurationFile",
+					"com.pwj.saucedemo/src/test/java/com/pwj/saucedemo/utilities/log4j2.xml");
+
 			final Logger logger = LogManager.getLogger(Demo.class);
 
 			Browser browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false));
 			BrowserContext context = browser.newContext();
 			Page page = context.newPage();
-			
-			System.setProperty("log4j.configurationFile", "com/pwj/saucedemo/utilities/log4j2.xml");
 
-	        logger.info("...Starting the test...");
+			logger.info("...Starting the test...");
 
 			// Step 2: Navigate to Saucedemo Website.
 			page.navigate("https://www.saucedemo.com/");
+
+			System.out.println("Log4j config location: " + System.getProperty("log4j.configurationFile"));
 
 			String title = page.title();
 			System.out.println("Page Title: " + title);
