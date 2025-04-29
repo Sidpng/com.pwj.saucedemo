@@ -11,8 +11,7 @@ public class Demo {
 		// Step 1: Create Playwright and Browser instance
 		try (Playwright playwright = Playwright.create()) {
 
-			System.setProperty("log4j.configurationFile",
-					"com.pwj.saucedemo/src/test/java/com/pwj/saucedemo/utilities/log4j2.xml");
+			System.setProperty("log4j.configurationFile", "/Users/siddharthaupadhyay/PlaywrightSidpng-workspace/com.pwj.saucedemo/src/test/java/com/pwj/saucedemo/utilities/log4j2.xml");
 
 			final Logger logger = LogManager.getLogger(Demo.class);
 
