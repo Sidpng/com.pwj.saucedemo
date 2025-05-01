@@ -92,7 +92,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">10 methods,   10 passed</span>
+                    <span class="method-stats">11 methods,   11 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -108,7 +108,17 @@
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-SauceDemo_Test_Suite" title="com.pwj.saucedemo.tests.CheckoutTest" class="method navigator-link" hash-for-method="testCancelCheckoutFlow">testCancelCheckoutFlow</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-SauceDemo_Test_Suite" title="com.pwj.saucedemo.tests.CheckoutFlowTest" class="method navigator-link" hash-for-method="testCancelFromOverviewStep">testCancelFromOverviewStep</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-SauceDemo_Test_Suite" title="com.pwj.saucedemo.tests.CheckoutFlowTest" class="method navigator-link" hash-for-method="testCancelFromStepOne">testCancelFromStepOne</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-SauceDemo_Test_Suite" title="com.pwj.saucedemo.tests.CheckoutFlowTest" class="method navigator-link" hash-for-method="testFullCheckoutFlow">testFullCheckoutFlow</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -146,11 +156,6 @@
                         <a href="#" panel-name="suite-SauceDemo_Test_Suite" title="com.pwj.saucedemo.tests.LoginScenariosDifferentUsers" class="method navigator-link" hash-for-method="testStandardUserLogin">testStandardUserLogin</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-SauceDemo_Test_Suite" title="com.pwj.saucedemo.tests.CheckoutTest" class="method navigator-link" hash-for-method="testValidCheckoutFlow">testValidCheckoutFlow</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
                     </div> <!-- method-list-content passed suite-SauceDemo_Test_Suite -->
                   </li>
                 </ul>
@@ -166,25 +171,34 @@
           <div class="suite-SauceDemo_Test_Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">com.pwj.saucedemo.tests.CheckoutTest</span>
+              <span class="class-name">com.pwj.saucedemo.tests.CheckoutFlowTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="testCancelCheckoutFlow">
-                  </a> <!-- testCancelCheckoutFlow -->
-                  <span class="method-name">testCancelCheckoutFlow</span>
+                  <a name="testCancelFromOverviewStep">
+                  </a> <!-- testCancelFromOverviewStep -->
+                  <span class="method-name">testCancelFromOverviewStep</span>
                   <em>
-(Validate cancel button navigates back to cart page)                  </em>
+(Cancel from overview page should return to inventory)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="testValidCheckoutFlow">
-                  </a> <!-- testValidCheckoutFlow -->
-                  <span class="method-name">testValidCheckoutFlow</span>
+                  <a name="testCancelFromStepOne">
+                  </a> <!-- testCancelFromStepOne -->
+                  <span class="method-name">testCancelFromStepOne</span>
                   <em>
-(Validate user is able to fill info and proceed to overview page)                  </em>
+(Cancel from Step One should return to cart page)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testFullCheckoutFlow">
+                  </a> <!-- testFullCheckoutFlow -->
+                  <span class="method-name">testFullCheckoutFlow</span>
+                  <em>
+(Complete checkout from cart to order confirmation)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -297,7 +311,7 @@
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite name=&quot;SauceDemo Test Suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
-  &lt;test thread-count=&quot;5&quot; name=&quot;Login and Cart Tests&quot;&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;Login and Checkout Tests&quot;&gt;
     &lt;classes&gt;
       &lt;class name=&quot;com.pwj.saucedemo.tests.SauceDemoStandardUserLogin&quot;/&gt;
       &lt;class name=&quot;com.pwj.saucedemo.tests.SauceDemoInvalidLoginTest&quot;/&gt;
@@ -311,9 +325,9 @@
           &lt;include name=&quot;testInvalidUserLogin&quot;/&gt;
         &lt;/methods&gt;
       &lt;/class&gt; &lt;!-- com.pwj.saucedemo.tests.LoginScenariosDifferentUsers --&gt;
-      &lt;class name=&quot;com.pwj.saucedemo.tests.CheckoutTest&quot;/&gt;
+      &lt;class name=&quot;com.pwj.saucedemo.tests.CheckoutFlowTest&quot;/&gt;
     &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- Login and Cart Tests --&gt;
+  &lt;/test&gt; &lt;!-- Login and Checkout Tests --&gt;
 &lt;/suite&gt; &lt;!-- SauceDemo Test Suite --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -325,7 +339,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">Login and Cart Tests (5 classes)</span>
+                <span class="test-name">Login and Checkout Tests (5 classes)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -351,52 +365,56 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(10);
+data.addRows(11);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'testPerformanceGlitchUserLogin')
 data.setCell(0, 2, 'com.pwj.saucedemo.tests.LoginScenariosDifferentUsers')
-data.setCell(0, 3, 6591);
+data.setCell(0, 3, 6586);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'testValidCheckoutFlow')
-data.setCell(1, 2, 'com.pwj.saucedemo.tests.CheckoutTest')
-data.setCell(1, 3, 276);
+data.setCell(1, 1, 'testFullCheckoutFlow')
+data.setCell(1, 2, 'com.pwj.saucedemo.tests.CheckoutFlowTest')
+data.setCell(1, 3, 385);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'testCancelCheckoutFlow')
-data.setCell(2, 2, 'com.pwj.saucedemo.tests.CheckoutTest')
-data.setCell(2, 3, 255);
+data.setCell(2, 1, 'testCancelFromOverviewStep')
+data.setCell(2, 2, 'com.pwj.saucedemo.tests.CheckoutFlowTest')
+data.setCell(2, 3, 333);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'testAddFirstProductToCart')
-data.setCell(3, 2, 'com.pwj.saucedemo.tests.AddToCartTest')
-data.setCell(3, 3, 178);
+data.setCell(3, 1, 'testCancelFromStepOne')
+data.setCell(3, 2, 'com.pwj.saucedemo.tests.CheckoutFlowTest')
+data.setCell(3, 3, 252);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'testStandardUserLogin')
-data.setCell(4, 2, 'com.pwj.saucedemo.tests.SauceDemoStandardUserLogin')
-data.setCell(4, 3, 117);
+data.setCell(4, 1, 'testAddFirstProductToCart')
+data.setCell(4, 2, 'com.pwj.saucedemo.tests.AddToCartTest')
+data.setCell(4, 3, 197);
 data.setCell(5, 0, 5)
-data.setCell(5, 1, 'testProblemUserLogin')
-data.setCell(5, 2, 'com.pwj.saucedemo.tests.LoginScenariosDifferentUsers')
-data.setCell(5, 3, 102);
+data.setCell(5, 1, 'testStandardUserLogin')
+data.setCell(5, 2, 'com.pwj.saucedemo.tests.SauceDemoStandardUserLogin')
+data.setCell(5, 3, 131);
 data.setCell(6, 0, 6)
 data.setCell(6, 1, 'testStandardUserLogin')
 data.setCell(6, 2, 'com.pwj.saucedemo.tests.LoginScenariosDifferentUsers')
-data.setCell(6, 3, 102);
+data.setCell(6, 3, 87);
 data.setCell(7, 0, 7)
-data.setCell(7, 1, 'testInvalidLoginShowsErrorMessage')
-data.setCell(7, 2, 'com.pwj.saucedemo.tests.SauceDemoInvalidLoginTest')
-data.setCell(7, 3, 94);
+data.setCell(7, 1, 'testProblemUserLogin')
+data.setCell(7, 2, 'com.pwj.saucedemo.tests.LoginScenariosDifferentUsers')
+data.setCell(7, 3, 79);
 data.setCell(8, 0, 8)
-data.setCell(8, 1, 'testInvalidUserLogin')
-data.setCell(8, 2, 'com.pwj.saucedemo.tests.LoginScenariosDifferentUsers')
-data.setCell(8, 3, 79);
+data.setCell(8, 1, 'testInvalidLoginShowsErrorMessage')
+data.setCell(8, 2, 'com.pwj.saucedemo.tests.SauceDemoInvalidLoginTest')
+data.setCell(8, 3, 76);
 data.setCell(9, 0, 9)
-data.setCell(9, 1, 'testLockedOutUserLogin')
+data.setCell(9, 1, 'testInvalidUserLogin')
 data.setCell(9, 2, 'com.pwj.saucedemo.tests.LoginScenariosDifferentUsers')
-data.setCell(9, 3, 73);
+data.setCell(9, 3, 74);
+data.setCell(10, 0, 10)
+data.setCell(10, 1, 'testLockedOutUserLogin')
+data.setCell(10, 2, 'com.pwj.saucedemo.tests.LoginScenariosDifferentUsers')
+data.setCell(10, 3, 70);
 window.suiteTableData['SauceDemo_Test_Suite']= { tableData: data, tableDiv: 'times-div-SauceDemo_Test_Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 7 seconds</span>
+              <span class="suite-total-time">Total running time: 8 seconds</span>
               <div id="times-div-SauceDemo_Test_Suite">
               </div> <!-- times-div-SauceDemo_Test_Suite -->
             </div> <!-- times-div -->
@@ -429,131 +447,143 @@ return data;
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">testStandardUserLogin</span>
-                <span class="method-start">3820 ms</span>
+                <span class="method-start">3769 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown([TestResult name=testStandardUserLogin status=SUCCESS method=SauceDemoStandardUserLogin.testStandard...)</span>
-                <span class="method-start">3938 ms</span>
+                <span class="method-start">3902 ms</span>
               </div> <!-- configuration-method after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.pwj.saucedemo.tests.SauceDemoInvalidLoginTest</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">setUp(public void com.pwj.saucedemo.tests.SauceDemoInvalidLoginTest.testInvalidLoginShowsErrorMessage())</span>
-                <span class="method-start">4262 ms</span>
+                <span class="method-start">4222 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">testInvalidLoginShowsErrorMessage</span>
-                <span class="method-start">5482 ms</span>
+                <span class="method-start">5813 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown([TestResult name=testInvalidLoginShowsErrorMessage status=SUCCESS method=SauceDemoInvalidLoginTest.t...)</span>
-                <span class="method-start">5577 ms</span>
+                <span class="method-start">5890 ms</span>
               </div> <!-- configuration-method after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.pwj.saucedemo.tests.AddToCartTest</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">setUp(public void com.pwj.saucedemo.tests.AddToCartTest.testAddFirstProductToCart())</span>
-                <span class="method-start">5738 ms</span>
+                <span class="method-start">6064 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">testAddFirstProductToCart</span>
-                <span class="method-start">7087 ms</span>
+                <span class="method-start">7884 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown([TestResult name=testAddFirstProductToCart status=SUCCESS method=AddToCartTest.testAddFirstProductTo...)</span>
-                <span class="method-start">7266 ms</span>
+                <span class="method-start">8082 ms</span>
               </div> <!-- configuration-method after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.pwj.saucedemo.tests.LoginScenariosDifferentUsers</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">setUp(public void com.pwj.saucedemo.tests.LoginScenariosDifferentUsers.testStandardUserLogin())</span>
-                <span class="method-start">7426 ms</span>
+                <span class="method-start">8256 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">testStandardUserLogin</span>
-                <span class="method-start">8633 ms</span>
+                <span class="method-start">9461 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown([TestResult name=testStandardUserLogin status=SUCCESS method=LoginScenariosDifferentUsers.testStanda...)</span>
-                <span class="method-start">8736 ms</span>
+                <span class="method-start">9549 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUp(public void com.pwj.saucedemo.tests.LoginScenariosDifferentUsers.testLockedOutUserLogin())</span>
-                <span class="method-start">8919 ms</span>
+                <span class="method-start">9774 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">testLockedOutUserLogin</span>
-                <span class="method-start">10268 ms</span>
+                <span class="method-start">10984 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown([TestResult name=testLockedOutUserLogin status=SUCCESS method=LoginScenariosDifferentUsers.testLocke...)</span>
-                <span class="method-start">10342 ms</span>
+                <span class="method-start">11055 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUp(public void com.pwj.saucedemo.tests.LoginScenariosDifferentUsers.testProblemUserLogin())</span>
-                <span class="method-start">10512 ms</span>
+                <span class="method-start">11234 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">testProblemUserLogin</span>
-                <span class="method-start">11713 ms</span>
+                <span class="method-start">12589 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown([TestResult name=testProblemUserLogin status=SUCCESS method=LoginScenariosDifferentUsers.testProblem...)</span>
-                <span class="method-start">11815 ms</span>
+                <span class="method-start">12669 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUp(public void com.pwj.saucedemo.tests.LoginScenariosDifferentUsers.testPerformanceGlitchUserLogin())</span>
-                <span class="method-start">12175 ms</span>
+                <span class="method-start">12874 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">testPerformanceGlitchUserLogin</span>
-                <span class="method-start">13382 ms</span>
+                <span class="method-start">14096 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown([TestResult name=testPerformanceGlitchUserLogin status=SUCCESS method=LoginScenariosDifferentUsers.t...)</span>
-                <span class="method-start">19976 ms</span>
+                <span class="method-start">20685 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUp(public void com.pwj.saucedemo.tests.LoginScenariosDifferentUsers.testInvalidUserLogin())</span>
-                <span class="method-start">20197 ms</span>
+                <span class="method-start">20894 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">testInvalidUserLogin</span>
-                <span class="method-start">21409 ms</span>
+                <span class="method-start">22277 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown([TestResult name=testInvalidUserLogin status=SUCCESS method=LoginScenariosDifferentUsers.testInvalid...)</span>
-                <span class="method-start">21488 ms</span>
+                <span class="method-start">22352 ms</span>
               </div> <!-- configuration-method after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
-              <div class="chronological-class-name">com.pwj.saucedemo.tests.CheckoutTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.pwj.saucedemo.tests.CheckoutFlowTest</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
-                <span class="method-name">setUp(public void com.pwj.saucedemo.tests.CheckoutTest.testCancelCheckoutFlow())</span>
-                <span class="method-start">21639 ms</span>
+                <span class="method-name">setUp(public void com.pwj.saucedemo.tests.CheckoutFlowTest.testCancelFromOverviewStep())</span>
+                <span class="method-start">22591 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">testCancelCheckoutFlow</span>
-                <span class="method-start">23004 ms</span>
+                <span class="method-name">testCancelFromOverviewStep</span>
+                <span class="method-start">23830 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">tearDown([TestResult name=testCancelCheckoutFlow status=SUCCESS method=CheckoutTest.testCancelCheckoutFlow()[...)</span>
-                <span class="method-start">23260 ms</span>
+                <span class="method-name">tearDown([TestResult name=testCancelFromOverviewStep status=SUCCESS method=CheckoutFlowTest.testCancelFromOve...)</span>
+                <span class="method-start">24163 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
-                <span class="method-name">setUp(public void com.pwj.saucedemo.tests.CheckoutTest.testValidCheckoutFlow())</span>
-                <span class="method-start">23431 ms</span>
+                <span class="method-name">setUp(public void com.pwj.saucedemo.tests.CheckoutFlowTest.testCancelFromStepOne())</span>
+                <span class="method-start">24342 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">testValidCheckoutFlow</span>
-                <span class="method-start">24802 ms</span>
+                <span class="method-name">testCancelFromStepOne</span>
+                <span class="method-start">25587 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">tearDown([TestResult name=testValidCheckoutFlow status=SUCCESS method=CheckoutTest.testValidCheckoutFlow()[pr...)</span>
-                <span class="method-start">25079 ms</span>
+                <span class="method-name">tearDown([TestResult name=testCancelFromStepOne status=SUCCESS method=CheckoutFlowTest.testCancelFromStepOne(...)</span>
+                <span class="method-start">25841 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp(public void com.pwj.saucedemo.tests.CheckoutFlowTest.testFullCheckoutFlow())</span>
+                <span class="method-start">26013 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">testFullCheckoutFlow</span>
+                <span class="method-start">27357 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown([TestResult name=testFullCheckoutFlow status=SUCCESS method=CheckoutFlowTest.testFullCheckoutFlow()[...)</span>
+                <span class="method-start">27743 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
