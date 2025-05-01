@@ -1,8 +1,19 @@
 package com.pwj.saucedemo.base;
 
 import com.microsoft.playwright.*;
+import org.testng.ITestResult;
+
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
+import com.pwj.saucedemo.utilities.ExtentManager;
+import java.lang.reflect.Method;
 
 /**
  * Project Title: SauceDemo Playwright Automation File Name: BaseTest.java
@@ -18,25 +29,76 @@ public abstract class BaseTest {
 	protected Browser browser;
 	protected BrowserContext context;
 	protected Page page;
+	protected ExtentReports extent;
+	protected ExtentTest test;
+
 
 	@BeforeMethod
-	public void setUp() {
-		playwright = Playwright.create();
-		browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false));
-		context = browser.newContext();
-		page = context.newPage();
-		page.navigate("https://www.saucedemo.com/");
+	public void setUp(Method method) {
+	    extent = ExtentManager.getInstance();
+
+	    // Initialize test node with method name
+	    test = extent.createTest(method.getName());
+
+	    playwright = Playwright.create();
+	    browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false));
+	    context = browser.newContext();
+	    page = context.newPage();
+	    page.navigate("https://www.saucedemo.com/");
+	    test.log(Status.INFO, "Navigated to SauceDemo site");
 	}
 
-	@AfterMethod
-	public void tearDown() {
-		if (page != null)
-			page.close();
-		if (context != null)
-			context.close();
-		if (browser != null)
-			browser.close();
-		if (playwright != null)
-			playwright.close();
+
+	/**
+	 * Takes a screenshot and saves it to test-output/screenshots directory.
+	 * 
+	 * @param testName The name of the test method for file naming.
+	 */
+	public String takeScreenshot(String name) {
+	    try {
+	        String timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss"));
+	        String folderPath = "test-output/screenshots";
+	        String filePath = folderPath + "/" + name + "_" + timestamp + ".png";
+
+	        Files.createDirectories(Paths.get(folderPath));
+	        page.screenshot(new Page.ScreenshotOptions().setPath(Paths.get(filePath)));
+
+	        System.out.println("Screenshot saved: " + filePath);
+	        return filePath;
+
+	    } catch (Exception e) {
+	        System.err.println("Screenshot failed: " + e.getMessage());
+	        return null;
+	    }
 	}
+
+
+	@AfterMethod
+	public void tearDown(ITestResult result) {
+	    try {
+	        String testName = result.getMethod().getMethodName();
+
+	        if (!result.isSuccess()) {
+	            String path = takeScreenshot(testName + "_FAILED");
+	            test.fail(result.getThrowable());
+	            test.addScreenCaptureFromPath(path);
+	        } else {
+	            String path = takeScreenshot(testName + "_PASSED");
+	            test.pass("Test passed");
+	            test.addScreenCaptureFromPath(path);
+	        }
+
+	    } catch (Exception e) {
+	        System.err.println("❌ Screenshot or Extent logging failed: " + e.getMessage());
+	    } finally {
+	        if (page != null) page.close();
+	        if (context != null) context.close();
+	        if (browser != null) browser.close();
+	        if (playwright != null) playwright.close();
+
+	        if (extent != null) extent.flush();
+	    }
+	}
+
+
 }

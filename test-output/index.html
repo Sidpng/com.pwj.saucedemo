@@ -92,7 +92,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods,   2 passed</span>
+                    <span class="method-stats">3 methods,   3 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -101,6 +101,11 @@
                       <a href="#" panel-name="suite-SauceDemo_Test_Suite" class="show-methods passed suite-SauceDemo_Test_Suite"> (show)</a> <!-- show-methods passed suite-SauceDemo_Test_Suite -->
                     </span>
                     <div class="method-list-content passed suite-SauceDemo_Test_Suite">
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-SauceDemo_Test_Suite" title="com.pwj.saucedemo.tests.AddToCartTest" class="method navigator-link" hash-for-method="testAddFirstProductToCart">testAddFirstProductToCart</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-SauceDemo_Test_Suite" title="com.pwj.saucedemo.tests.SauceDemoInvalidLoginTest" class="method navigator-link" hash-for-method="testInvalidLoginShowsErrorMessage">testInvalidLoginShowsErrorMessage</a> <!-- method navigator-link -->
@@ -126,21 +131,6 @@
           <div class="suite-SauceDemo_Test_Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">com.pwj.saucedemo.tests.SauceDemoInvalidLoginTest</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="testInvalidLoginShowsErrorMessage">
-                  </a> <!-- testInvalidLoginShowsErrorMessage -->
-                  <span class="method-name">testInvalidLoginShowsErrorMessage</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-SauceDemo_Test_Suite-class-passed -->
-          <div class="suite-SauceDemo_Test_Suite-class-passed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
               <span class="class-name">com.pwj.saucedemo.tests.SauceDemoStandardUserLogin</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
@@ -149,6 +139,36 @@
                   <a name="testStandardUserLogin">
                   </a> <!-- testStandardUserLogin -->
                   <span class="method-name">testStandardUserLogin</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-SauceDemo_Test_Suite-class-passed -->
+          <div class="suite-SauceDemo_Test_Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.pwj.saucedemo.tests.AddToCartTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testAddFirstProductToCart">
+                  </a> <!-- testAddFirstProductToCart -->
+                  <span class="method-name">testAddFirstProductToCart</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-SauceDemo_Test_Suite-class-passed -->
+          <div class="suite-SauceDemo_Test_Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.pwj.saucedemo.tests.SauceDemoInvalidLoginTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testInvalidLoginShowsErrorMessage">
+                  </a> <!-- testInvalidLoginShowsErrorMessage -->
+                  <span class="method-name">testInvalidLoginShowsErrorMessage</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -163,12 +183,13 @@
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite name=&quot;SauceDemo Test Suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
-  &lt;test thread-count=&quot;5&quot; name=&quot;Login Tests&quot;&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;Login and Cart Tests&quot;&gt;
     &lt;classes&gt;
       &lt;class name=&quot;com.pwj.saucedemo.tests.SauceDemoStandardUserLogin&quot;/&gt;
       &lt;class name=&quot;com.pwj.saucedemo.tests.SauceDemoInvalidLoginTest&quot;/&gt;
+      &lt;class name=&quot;com.pwj.saucedemo.tests.AddToCartTest&quot;/&gt;
     &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- Login Tests --&gt;
+  &lt;/test&gt; &lt;!-- Login and Cart Tests --&gt;
 &lt;/suite&gt; &lt;!-- SauceDemo Test Suite --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -180,7 +201,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">Login Tests (2 classes)</span>
+                <span class="test-name">Login and Cart Tests (3 classes)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -206,20 +227,24 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(2);
+data.addRows(3);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'testStandardUserLogin')
-data.setCell(0, 2, 'com.pwj.saucedemo.tests.SauceDemoStandardUserLogin')
-data.setCell(0, 3, 133);
+data.setCell(0, 1, 'testAddFirstProductToCart')
+data.setCell(0, 2, 'com.pwj.saucedemo.tests.AddToCartTest')
+data.setCell(0, 3, 177);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'testInvalidLoginShowsErrorMessage')
-data.setCell(1, 2, 'com.pwj.saucedemo.tests.SauceDemoInvalidLoginTest')
-data.setCell(1, 3, 114);
+data.setCell(1, 1, 'testStandardUserLogin')
+data.setCell(1, 2, 'com.pwj.saucedemo.tests.SauceDemoStandardUserLogin')
+data.setCell(1, 3, 120);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'testInvalidLoginShowsErrorMessage')
+data.setCell(2, 2, 'com.pwj.saucedemo.tests.SauceDemoInvalidLoginTest')
+data.setCell(2, 3, 79);
 window.suiteTableData['SauceDemo_Test_Suite']= { tableData: data, tableDiv: 'times-div-SauceDemo_Test_Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 247 ms</span>
+              <span class="suite-total-time">Total running time: 376 ms</span>
               <div id="times-div-SauceDemo_Test_Suite">
               </div> <!-- times-div-SauceDemo_Test_Suite -->
             </div> <!-- times-div -->
@@ -247,31 +272,46 @@ return data;
             <div class="chronological-class">
               <div class="chronological-class-name">com.pwj.saucedemo.tests.SauceDemoStandardUserLogin</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
-                <span class="method-name">setUp</span>
+                <span class="method-name">setUp(public void com.pwj.saucedemo.tests.SauceDemoStandardUserLogin.testStandardUserLogin())</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">testStandardUserLogin</span>
-                <span class="method-start">2709 ms</span>
+                <span class="method-start">3981 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">tearDown</span>
-                <span class="method-start">2843 ms</span>
+                <span class="method-name">tearDown([TestResult name=testStandardUserLogin status=SUCCESS method=SauceDemoStandardUserLogin.testStandard...)</span>
+                <span class="method-start">4103 ms</span>
               </div> <!-- configuration-method after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.pwj.saucedemo.tests.SauceDemoInvalidLoginTest</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
-                <span class="method-name">setUp</span>
-                <span class="method-start">2957 ms</span>
+                <span class="method-name">setUp(public void com.pwj.saucedemo.tests.SauceDemoInvalidLoginTest.testInvalidLoginShowsErrorMessage())</span>
+                <span class="method-start">4423 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">testInvalidLoginShowsErrorMessage</span>
-                <span class="method-start">6052 ms</span>
+                <span class="method-start">5793 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">tearDown</span>
-                <span class="method-start">6167 ms</span>
+                <span class="method-name">tearDown([TestResult name=testInvalidLoginShowsErrorMessage status=SUCCESS method=SauceDemoInvalidLoginTest.t...)</span>
+                <span class="method-start">5873 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.pwj.saucedemo.tests.AddToCartTest</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp(public void com.pwj.saucedemo.tests.AddToCartTest.testAddFirstProductToCart())</span>
+                <span class="method-start">6040 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">testAddFirstProductToCart</span>
+                <span class="method-start">7234 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown([TestResult name=testAddFirstProductToCart status=SUCCESS method=AddToCartTest.testAddFirstProductTo...)</span>
+                <span class="method-start">7412 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
