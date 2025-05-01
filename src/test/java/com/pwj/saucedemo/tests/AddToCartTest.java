@@ -27,7 +27,7 @@ public class AddToCartTest extends BaseTest {
 
         // Step 2: Interact with Inventory Page
         InventoryPage inventoryPage = new InventoryPage(page);
-        inventoryPage.addFirstProductToCart();
+        inventoryPage.clickAddToCart("Sauce Labs Backpack");
 
         // Step 3: Click on cart icon to go to cart
         inventoryPage.goToCart();

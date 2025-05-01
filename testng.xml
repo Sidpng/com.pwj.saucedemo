@@ -17,7 +17,7 @@
 					<include name="testInvalidUserLogin" />
 				</methods>
 			</class>
-
+			<class name="com.pwj.saucedemo.tests.CheckoutTest" />
 		</classes>
 	</test>
 
