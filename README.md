@@ -1,106 +1,83 @@
 
-# SauceDemo Playwright Java Automation Framework
+# SauceDemo Automation Framework – Playwright with Java
 
-🔍 A robust automation framework built using **Playwright**, **Java**, **TestNG**, and **Maven** to perform end-to-end UI testing on the [SauceDemo](https://www.saucedemo.com) web application.
+This is a Playwright-based automation framework written in Java for end-to-end testing of the [SauceDemo](https://www.saucedemo.com/) web application. The framework follows the Page Object Model (POM) design pattern and is structured for scalability, readability, and maintainability.
 
 ---
 
-## 📂 Project Structure
+##  Features
+
+- Automated login testing for multiple user types
+- Add-to-cart and cart validation
+- Full checkout flow (Step 1 → Step 2 → Confirmation) with one unified page object
+- Reusable POM structure
+- TestNG for test management and grouping
+- Easy integration into CI/CD pipelines
+
+---
+
+##  Technology Stack
+
+- **Language:** Java
+- **Test Framework:** TestNG
+- **Automation Engine:** Playwright for Java
+- **Build Tool:** Maven
+- **Design Pattern:** Page Object Model (POM)
+
+---
+
+##  Project Structure
 
 ```
-saucedemo-playwright-java/
-├── pom.xml                     # Maven dependencies and build config
-├── testng.xml                  # TestNG test suite
-├── src
-│   ├── main
-│   │   └── java
-│   │       └── com.pwj.saucedemo
-│   │            ├── base       # BaseTest class for browser setup/teardown
-│   │            └── pages      # Page Object Model classes
-│   └── test
-│       └── java
-│           └── com.pwj.saucedemo.tests  # Test classes using TestNG
+src
+└── test
+    └── java
+        ├── base
+        │   └── BaseTest.java
+        ├── pages
+        │   ├── SauceDemoHomePage.java
+        │   ├── InventoryPage.java
+        │   ├── CartPage.java
+        │   └── CheckoutFlowPage.java         #  Unified checkout handler
+        └── tests
+            ├── SauceDemoStandardUserLogin.java
+            ├── SauceDemoInvalidLoginTest.java
+            ├── LoginScenariosDifferentUsers.java
+            ├── AddToCartTest.java
+            └── CheckoutFlowTest.java         # Consolidated checkout test class
 ```
 
 ---
 
-## 🚀 Tech Stack
+##  Test Execution
 
-- **Java 17+**
-- **Playwright Java (1.44.0)**
-- **TestNG (7.9.0)**
-- **Maven (Surefire plugin)**
-- **Eclipse / IntelliJ compatible**
+To run all tests:
 
----
-
-## 🧪 How to Run Tests
-
-### ➤ Using Terminal (Maven):
 ```bash
-mvn clean test -DsuiteXmlFile=testng.xml
+mvn test -DsuiteXmlFile=testng.xml
 ```
 
-### ➤ Using Eclipse:
-- Right-click `testng.xml` → Run As → **TestNG Suite**
+TestNG suite includes:
+- All login test scenarios
+- Cart validation
+- Optimized full checkout flow in a single test class
 
 ---
 
-## ✅ Available Test Cases
+##  Notes
 
-| Test Class | Description |
-|------------|-------------|
-| `SauceDemoStandardUserLogin` | Tests valid login using a standard user |
-| `SauceDemoInvalidLoginTest` | Tests invalid login and error message validation |
-
----
-
-## 📘 Page Objects Implemented
-
-- `LandingPage.java` — login form interaction
-- `InventoryPage.java` *(in progress)* — post-login item and cart interaction
+- `CheckoutFlowPage.java` replaces previous individual page files for:
+  - `CheckoutPage.java`
+  - `CheckoutOverviewPage.java`
+  - `CheckoutCompletePage.java`
+- `CheckoutFlowTest.java` replaces:
+  - `CheckoutTest.java`
+  - `CheckoutOverviewTest.java`
+  - `CheckoutCompleteTest.java`
 
 ---
 
-## 🧰 Base Class
-
-- `BaseTest.java` handles:
-  - Playwright engine start/stop
-  - Browser and context lifecycle
-  - URL navigation
-  - Reduces test class boilerplate
-
----
-
-## 📦 Build & Dependency Management
-
-This project uses **Maven**. Key dependencies:
-
-```xml
-<dependency>
-  <groupId>com.microsoft.playwright</groupId>
-  <artifactId>playwright</artifactId>
-  <version>1.44.0</version>
-</dependency>
-
-<dependency>
-  <groupId>org.testng</groupId>
-  <artifactId>testng</artifactId>
-  <version>7.9.0</version>
-  <scope>test</scope>
-</dependency>
-```
-
----
-
-## 👨‍💻 Author
+##  Author
 
 **Siddhartha Upadhyay**  
-📍 India  
-🔗 [GitHub Profile](https://github.com/your-github-profile)
-
----
-
-## 📄 License
-
-This project is for educational and demo purposes. No official license applied.
+GitHub: [@Sidpng](https://github.com/Sidpng)
