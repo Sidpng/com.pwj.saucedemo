@@ -80,4 +80,4 @@ TestNG suite includes:
 ##  Author
 
 **Siddhartha Upadhyay**  
-GitHub: [@YourUsername](https://github.com/Sidpng)
+GitHub: [@Sidpng](https://github.com/Sidpng)
