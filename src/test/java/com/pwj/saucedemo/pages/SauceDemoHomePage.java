@@ -83,4 +83,13 @@ public class SauceDemoHomePage {
 		return null;
 	}
 
+	/**
+	 * Returns the error message locator (used after failed login attempts)
+	 * 
+	 * @return Locator object for the error message element
+	 */
+	public Locator getErrorLocator() {
+		return page.locator("[data-test='error']");
+	}
+
 }
