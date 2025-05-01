@@ -11,7 +11,7 @@ import static org.testng.Assert.assertEquals;
  * Project Title: SauceDemo Playwright Automation
  * File Name: AddToCartTest.java
  * Author: Siddhartha Upadhyay
- * GitHub: https://github.com/your-github-profile
+ * GitHub: https://github.com/Sidpng
  * Creation Date: 01-May-2025
  * Description: This test logs in with a standard user and verifies that a product can be added to the cart.
  */

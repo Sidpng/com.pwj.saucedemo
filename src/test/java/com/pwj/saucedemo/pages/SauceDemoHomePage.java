@@ -1,10 +1,10 @@
 /**
  * Project Title: SauceDemo Playwright Automation
- * File Name: LandingPage.java
+ * File Name: SauceDemoHomePage.java
  * Author: Siddhartha Upadhyay
- * GitHub: https://github.com/your-github-profile
+ * GitHub: https://github.com/Sidpng
  * Creation Date: 29-April-2025
- * Description: This class represents the landing page (login page) of the SauceDemo website.
+ * Description: This class represents the home page of the SauceDemo website.
  */
 
 package com.pwj.saucedemo.pages;
